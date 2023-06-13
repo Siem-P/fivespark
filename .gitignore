@@ -1,0 +1,5 @@
+# API KEY
+.env
+
+# NODE
+node_modules/
