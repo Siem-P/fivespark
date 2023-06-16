@@ -14,7 +14,7 @@ server.listen(server.get("port"), () => {
 	console.log(`Application started on http://localhost:${server.get("port")}`)
 });
 
-server.get("/", (req, res) => {
+server.get("/", async (req, res) => {
 	
 	res.render("index")
 })
