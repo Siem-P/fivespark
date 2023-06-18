@@ -21,13 +21,30 @@ server.listen(server.get("port"), () => {
 	console.log(`Application started on http://localhost:${server.get("port")}`)
 });
 
-server.get("/", async (req, res) => {
-	const pillarCategories = await dataFetch("https://api.fivespark.com/items/pillar_categories")
-	
-	const pillarCategory = pillarCategories.data.filter(data => data.id === 4)
-	console.log(pillarCategory)
 
-	res.render("index", { pillarCategory })
+// FUNCTIONS 
+
+server.get("/", async (req, res) => {
+
+	
+
+	const serviceContracts = await dataFetch("https://api.fivespark.com/items/service_contracts")
+	const selectedContracts = serviceContracts.data.filter(contract => contract.id === 3 || contract.id === 4 || contract.id === 7)
+	
+
+	const activitiesServicesContracts = await dataFetch("https://api.fivespark.com/items/activities_service_contracts")
+	const contract_basic = activitiesServicesContracts.data.filter(contract => contract.service_contracts_id === 3)
+	const contract_complete = activitiesServicesContracts.data.filter(contract => contract.service_contracts_id === 4)
+	const contract_premium = activitiesServicesContracts.data.filter(contract => contract.service_contracts_id === 7)
+
+	// console.log(contract_premium)
+	console.log(selectedContracts)
+	// const pillarCategories = await dataFetch("https://api.fivespark.com/items/pillar_categories")
+	// const activities_translations = await dataFetch("https://api.fivespark.com/items/activities_translations")
+	// const pillarCategory = pillarCategories.data.filter(data => data.id === 4)
+	
+
+	res.render("index", { selectedContracts, contract_basic, contract_premium, contract_complete })
 })
 
 

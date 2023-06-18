@@ -30,36 +30,19 @@
     <section class="service-contracts">
 
         <ul class="nav nav-tabs">
-            <li class="nav-item">
-                <a href="#" class="nav-link active" aria-current="page">Basic</a>
-                <div class="desktop-contract-wrapper">
-                    <div class="contract-info-wrapper">
-                        <p class="contract-price">€4.99</p>
-                        <p class="price-info">p/gebruiker p/mnd</p>
+            <% selectedContracts.forEach(contract => { %>
+                
+                <li class="nav-item">
+                    <a href="#" class="nav-link active" aria-current="page">Basic</a>
+                    <div class="desktop-contract-wrapper">
+                        <div class="contract-info-wrapper">
+                            <p class="contract-price"><%- contract.list_price %></p>
+                            <p class="price-info"><%- contract.price_unit %></p>
+                        </div>
+                        <a href="#">Lees meer</a>
                     </div>
-                    <a href="#">Lees meer</a>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">Premium</a>
-                <div class="desktop-contract-wrapper">
-                    <div class="contract-info-wrapper">
-                        <p class="contract-price">€4.99</p>
-                        <p class="price-info">p/gebruiker p/mnd</p>
-                    </div>
-                    <a href="#">Lees meer</a>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">Complete</a>
-                <div class="desktop-contract-wrapper">
-                    <div class="contract-info-wrapper">
-                        <p class="contract-price">€4.99</p>
-                        <p class="price-info">p/gebruiker p/mnd</p>
-                    </div>
-                    <a href="#">Lees meer</a>
-                </div>
-            </li>
+                </li>
+            <% }) %>
         </ul>
 
         <div class="table-responsive">
@@ -81,11 +64,16 @@
                         <td>R1C3</td>
                           
                     </tr>
-                    <tr class="">
-                        <td scope="row">Activiteit</td>
-                        <td>Tooltip</td>
-                        <td>Vinkje</td>
-                    </tr>
+                    
+                          
+                          <!-- <%# pillarCategory[0].activities.forEach(activity => { %>
+                            <tr class="">
+                                <td scope="row"><%# activity %></td>
+                                <td>Tooltip</td>
+                                <td>Vinkje</td>
+                            </tr>
+                          <%# }) %> -->
+                    
                 </tbody>
             </table>
         </div>
