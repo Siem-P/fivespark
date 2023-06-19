@@ -58,17 +58,9 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr class="table-row">
-						<!-- Contract - Basic -->
-						<td scope="row">R1C1</td> 
-						<!-- Contract - Premium -->
-						<td>R1C2</td>
-						<!-- Contract - Complete -->
-						<td>R1C3</td>
-					</tr>
 					<% contract_basic.forEach(activity => { %>
 						<% activityTranslations.data.forEach(activityTranslation => { %>
-							<% if (activity.id === activityTranslation.id) { %>
+							<% if (activity.activities_id === activityTranslation.id) { %>
 								<tr class="">
 									<td scope="row"><%- activityTranslation.title %></td>
 									<td>Tooltip</td>
@@ -79,8 +71,7 @@
 									<% } %>
 								</tr>
 							<% } %>
-							<% }) %>
-							
+						<% }) %>
 					<% }) %>
 				</tbody>
 			</table>
@@ -97,24 +88,20 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr class="table-row">
-						<!-- Contract - Basic -->
-						<td scope="row">R1C1</td> 
-						<!-- Contract - Premium -->
-						<td>R1C2</td>
-						<!-- Contract - Complete -->
-						<td>R1C3</td>
-					</tr>
-					<% contract_premium.forEach(activity => { %>
-						<tr class="">
-							<td scope="row"><%- activity.activities_id %></td>
-							<td>Tooltip</td>
-							<% if (activity.charged_minutes === 0) { %>
-								<td>Inbegrepen</td>
-							<% } else { %>
-								<td>Niet inbegrepen</td>
+					<% contract_complete.forEach(activity => { %>
+						<% activityTranslations.data.forEach(activityTranslation => { %>
+							<% if (activity.activities_id === activityTranslation.id) { %>
+								<tr class="">
+									<td scope="row"><%- activityTranslation.title %></td>
+									<td>Tooltip</td>
+									<% if (activity.charged_minutes === 0) { %>
+										<td>Inbegrepen</td>
+									<% } else { %>
+										<td>Niet inbegrepen</td>
+									<% } %>
+								</tr>
 							<% } %>
-						</tr>
+						<% }) %>
 					<% }) %>
 				</tbody>
 			</table>
@@ -131,24 +118,20 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr class="table-row">
-						<!-- Contract - Basic -->
-						<td scope="row">R1C1</td> 
-						<!-- Contract - Premium -->
-						<td>R1C2</td>
-						<!-- Contract - Complete -->
-						<td>R1C3</td>
-					</tr>
-					<% contract_complete.forEach(activity => { %>
-						<tr class="">
-							<td scope="row"><%- activity.activities_id %></td>
-							<td>Tooltip</td>
-							<% if (activity.charged_minutes === 0) { %>
-								<td>Inbegrepen</td>
-							<% } else { %>
-								<td>Niet inbegrepen</td>
+					<% contract_premium.forEach(activity => { %>
+						<% activityTranslations.data.forEach(activityTranslation => { %>
+							<% if (activity.activities_id === activityTranslation.id) { %>
+								<tr class="">
+									<td scope="row"><%- activityTranslation.title %></td>
+									<td>Tooltip</td>
+									<% if (activity.charged_minutes === 0) { %>
+										<td>Inbegrepen</td>
+									<% } else { %>
+										<td>Niet inbegrepen</td>
+									<% } %>
+								</tr>
 							<% } %>
-						</tr>
+						<% }) %>
 					<% }) %>
 				</tbody>
 			</table>
