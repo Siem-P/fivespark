@@ -55,15 +55,17 @@
 						<th scope="col">Activiteit</th>
 						<th scope="col">---</th>
 						<th scope="col">---</th>
+						<th scope="col">Basic</th>
 					</tr>
 				</thead>
 				<tbody>
 					<% contract_basic.forEach(activity => { %>
 						<% activityTranslations.data.forEach(activityTranslation => { %>
-							<% if (activity.activities_id === activityTranslation.id && activityTranslation.languages_code === language) { %>
+							<% if (activity.activities_id === activityTranslation.activities_id && activityTranslation.languages_code === language) { %>
 								<tr>
 									<td><%- activityTranslation.title %></td>
 									<td>Tooltip</td>
+									
 									<% if (activity.charged_minutes === 0) { %>
 										<td>Inbegrepen</td>
 									<% } else { %>
@@ -73,6 +75,9 @@
 							<% } %>
 						<% }) %>
 					<% }) %>
+					
+					
+					
 				</tbody>
 			</table>
 		</div>
