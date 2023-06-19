@@ -55,7 +55,6 @@
 						<th scope="col">Activiteit</th>
 						<th scope="col">---</th>
 						<th scope="col">---</th>
-						<th scope="col">Basic</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -67,9 +66,9 @@
 									<td>Tooltip</td>
 									
 									<% if (activity.charged_minutes === 0) { %>
-										<td>Inbegrepen</td>
+										<td><img src="../icons/Check_icon.svg" alt="rondje met vinkje er in."></td>
 									<% } else { %>
-										<td>Niet inbegrepen</td>
+										<td><img src="../icons/X_icon.svg" alt="rondje met kruisje er in."></td>
 									<% } %>
 								</tr>
 							<% } %>
@@ -100,9 +99,9 @@
 									<td><%- activityTranslation.title %></td>
 									<td>Tooltip</td>
 									<% if (activity.charged_minutes === 0) { %>
-										<td>Inbegrepen</td>
+										<td><img src="../icons/Check_icon.svg" alt="rondje met vinkje er in."></td>
 									<% } else { %>
-										<td>Niet inbegrepen</td>
+										<td><img src="../icons/X_icon.svg" alt="rondje met kruisje er in."></td>
 									<% } %>
 								</tr>
 							<% } %>
@@ -130,9 +129,9 @@
 									<td><%- activityTranslation.title %></td>
 									<td>Tooltip</td>
 									<% if (activity.charged_minutes === 0) { %>
-										<td>Inbegrepen</td>
+										<td><img src="../icons/Check_icon.svg" alt="rondje met vinkje er in."></td>
 									<% } else { %>
-										<td>Niet inbegrepen</td>
+										<td><img src="../icons/X_icon.svg" alt="rondje met kruisje er in."></td>
 									<% } %>
 								</tr>
 							<% } %>
