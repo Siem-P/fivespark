@@ -38,16 +38,19 @@ server.get("/", async (req, res) => {
 	const contract_complete = activitiesServicesContracts.data.filter(contract => contract.service_contracts_id === 4)
 	const contract_premium = activitiesServicesContracts.data.filter(contract => contract.service_contracts_id === 7)
 
+
+	const activityTranslations = await dataFetch("https://api.fivespark.com/items/activities_translations")
 	// const all_contracts = [contract_basic, contract_complete, contract_premium]
 
-	console.log(contract_basic)
+	console.log(activityTranslations)
+
 	// console.log(selectedContracts)
 	// const pillarCategories = await dataFetch("https://api.fivespark.com/items/pillar_categories")
 	// const activities_translations = await dataFetch("https://api.fivespark.com/items/activities_translations")
 	// const pillarCategory = pillarCategories.data.filter(data => data.id === 4)
 	
 
-	res.render("index", { selectedContracts, contract_basic, contract_premium, contract_complete })
+	res.render("index", { selectedContracts, contract_basic, contract_premium, contract_complete, activityTranslations })
 })
 
 

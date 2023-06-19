@@ -67,15 +67,20 @@
 						<td>R1C3</td>
 					</tr>
 					<% contract_basic.forEach(activity => { %>
-						<tr class="">
-							<td scope="row"><%- activity.activities_id %></td>
-							<td>Tooltip</td>
-							<% if (activity.charged_minutes === 0) { %>
-								<td>Inbegrepen</td>
-							<% } else { %>
-								<td>Niet inbegrepen</td>
+						<% activityTranslations.data.forEach(activityTranslation => { %>
+							<% if (activity.id === activityTranslation.id) { %>
+								<tr class="">
+									<td scope="row"><%- activityTranslation.title %></td>
+									<td>Tooltip</td>
+									<% if (activity.charged_minutes === 0) { %>
+										<td>Inbegrepen</td>
+									<% } else { %>
+										<td>Niet inbegrepen</td>
+									<% } %>
+								</tr>
 							<% } %>
-						</tr>
+							<% }) %>
+							
 					<% }) %>
 				</tbody>
 			</table>
