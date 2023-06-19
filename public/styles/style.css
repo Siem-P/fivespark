@@ -1,0 +1,21 @@
+:root {
+    --primary-color: #FFC200;
+    --primary-color-white: #fff;
+    --primary-color-black: #000;
+    --black-75: #404040;
+    --black-50: #808080;
+    --black-25: #BFBFBF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'TStarProRegular';
+    src: url("../fonts/TStarProRegular.ttf");
+    font-weight: 500;
+    font-display: swap;
+}
