@@ -33,12 +33,15 @@ server.get("/", async (req, res) => {
 	
 
 	const activitiesServicesContracts = await dataFetch("https://api.fivespark.com/items/activities_service_contracts")
+	
 	const contract_basic = activitiesServicesContracts.data.filter(contract => contract.service_contracts_id === 3)
 	const contract_complete = activitiesServicesContracts.data.filter(contract => contract.service_contracts_id === 4)
 	const contract_premium = activitiesServicesContracts.data.filter(contract => contract.service_contracts_id === 7)
 
-	// console.log(contract_premium)
-	console.log(selectedContracts)
+	// const all_contracts = [contract_basic, contract_complete, contract_premium]
+
+	console.log(contract_basic)
+	// console.log(selectedContracts)
 	// const pillarCategories = await dataFetch("https://api.fivespark.com/items/pillar_categories")
 	// const activities_translations = await dataFetch("https://api.fivespark.com/items/activities_translations")
 	// const pillarCategory = pillarCategories.data.filter(data => data.id === 4)

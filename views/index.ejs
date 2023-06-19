@@ -45,38 +45,111 @@
             <% }) %>
         </ul>
 
-        <div class="table-responsive">
-            <table class="table table-primary">
-                <thead>
-                    <tr>
-                        <th scope="col">Activiteit</th>
-                        <th scope="col">---</th>
-                        <th scope="col">---</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="table-row">
-                        <!-- Contract - Basic -->
-                        <td scope="row">R1C1</td> 
-                        <!-- Contract - Premium -->
-                        <td>R1C2</td>
-                        <!-- Contract - Complete -->
-                        <td>R1C3</td>
-                          
-                    </tr>
-                    
-                          
-                          <!-- <%# pillarCategory[0].activities.forEach(activity => { %>
-                            <tr class="">
-                                <td scope="row"><%# activity %></td>
-                                <td>Tooltip</td>
-                                <td>Vinkje</td>
-                            </tr>
-                          <%# }) %> -->
-                    
-                </tbody>
-            </table>
-        </div>
+        <!-- Here goes buttons for switching contracts -->
+
+		<!-- Basic -->
+		<div class="table-responsive">
+			<table class="table table-primary">
+				<thead>
+					<tr>
+						<th scope="col">Activiteit</th>
+						<th scope="col">---</th>
+						<th scope="col">---</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="table-row">
+						<!-- Contract - Basic -->
+						<td scope="row">R1C1</td> 
+						<!-- Contract - Premium -->
+						<td>R1C2</td>
+						<!-- Contract - Complete -->
+						<td>R1C3</td>
+					</tr>
+					<% contract_basic.forEach(activity => { %>
+						<tr class="">
+							<td scope="row"><%- activity.activities_id %></td>
+							<td>Tooltip</td>
+							<% if (activity.charged_minutes === 0) { %>
+								<td>Inbegrepen</td>
+							<% } else { %>
+								<td>Niet inbegrepen</td>
+							<% } %>
+						</tr>
+					<% }) %>
+				</tbody>
+			</table>
+		</div>
+
+		<!-- Premium -->
+		<div class="table-responsive">
+			<table class="table table-primary">
+				<thead>
+					<tr>
+						<th scope="col">Activiteit</th>
+						<th scope="col">---</th>
+						<th scope="col">---</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="table-row">
+						<!-- Contract - Basic -->
+						<td scope="row">R1C1</td> 
+						<!-- Contract - Premium -->
+						<td>R1C2</td>
+						<!-- Contract - Complete -->
+						<td>R1C3</td>
+					</tr>
+					<% contract_premium.forEach(activity => { %>
+						<tr class="">
+							<td scope="row"><%- activity.activities_id %></td>
+							<td>Tooltip</td>
+							<% if (activity.charged_minutes === 0) { %>
+								<td>Inbegrepen</td>
+							<% } else { %>
+								<td>Niet inbegrepen</td>
+							<% } %>
+						</tr>
+					<% }) %>
+				</tbody>
+			</table>
+		</div>
+
+		<!-- Complete -->
+		<div class="table-responsive">
+			<table class="table table-primary">
+				<thead>
+					<tr>
+						<th scope="col">Activiteit</th>
+						<th scope="col">---</th>
+						<th scope="col">---</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="table-row">
+						<!-- Contract - Basic -->
+						<td scope="row">R1C1</td> 
+						<!-- Contract - Premium -->
+						<td>R1C2</td>
+						<!-- Contract - Complete -->
+						<td>R1C3</td>
+					</tr>
+					<% contract_complete.forEach(activity => { %>
+						<tr class="">
+							<td scope="row"><%- activity.activities_id %></td>
+							<td>Tooltip</td>
+							<% if (activity.charged_minutes === 0) { %>
+								<td>Inbegrepen</td>
+							<% } else { %>
+								<td>Niet inbegrepen</td>
+							<% } %>
+						</tr>
+					<% }) %>
+				</tbody>
+			</table>
+		</div>
+
+        
         
     </section>
 
