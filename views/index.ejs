@@ -2,16 +2,17 @@
 
 <nav>
     <div class="nav-wrapper">
-        <img src="" class="img-responsive" alt="">
-        <button class="menu-icon">menu</button>
+		<img src="https://fivespark.com/hubfs/Fivespark_Oct_2022/Images/white_logo.svg" class="logo-img" alt="">
+        <!-- <img src="https://fivespark.com/hubfs/Fivespark_Oct_2022/Images/Logo.svg" class="logo-img" alt=""> -->
+        <button class="menu-icon">Menu</button>
     </div>
 </nav>
 
 <div class="content-wrapper">
-    <section class="">
+    <section class="intro-section">
         <h1>Digitale Werkplek</h1>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum molestiae eveniet culpa rem adipisci aperiam rerum. Corporis itaque nesciunt minima nemo accusamus ipsam veniam, fugiat doloribus deleniti, natus totam ducimus.</p>
-        <a href="">Services</a>
+		<a href="#service-contracts">Bekijk contracten</a>
     </section>
 
     <div class="divider-graphic"></div>
@@ -19,25 +20,26 @@
     <section class="list-of-pros">
         <h2>Voordelen</h2>
         <ul>
-            <li class="list-item"><span>Check-icon</span><p>Pro-actief werkplekbeheer & monitoring</p></li>
-            <li class="list-item"><span>Check-icon</span><p>Solide backups</p></li>
-            <li class="list-item"><span>Check-icon</span><p>Hardware [ as a service ]</p></li>
-            <li class="list-item"><span>Check-icon</span><p>Microsoft-licenties</p></li>
-            <li class="list-item"><span>Check-icon</span><p>Security - anti-virus & anti-ransomware</p></li>
+            <li class="list-item"><img src="../images/check_black.svg" alt=""><p>Pro-actief werkplekbeheer & monitoring</p></li>
+            <li class="list-item"><img src="../images/check_black.svg" alt=""><p>Solide backups</p></li>
+            <li class="list-item"><img src="../images/check_black.svg" alt=""><p>Hardware [ as a service ]</p></li>
+            <li class="list-item"><img src="../images/check_black.svg" alt=""><p>Microsoft-licenties</p></li>
+            <li class="list-item"><img src="../images/check_black.svg" alt=""><p>Security - anti-virus & anti-ransomware</p></li>
         </ul>
     </section>
 
     <section class="service-contracts">
 
-        <ul class="nav nav-tabs">
+        <ul class="nav-tabs">
             <% selectedContracts.forEach(contract => { %>
                 
-                <li class="nav-item">
-                    <a href="#" class="nav-link active" aria-current="page">Basic</a>
+                <li class="nav-item active"> 
+					
+                    <button class="tab-button">Basic</button>
                     <div class="desktop-contract-wrapper">
                         <div class="contract-info-wrapper">
                             <p class="contract-price"><%- contract.list_price %></p>
-                            <p class="price-info"><%- contract.price_unit %></p>
+                            <p class="price-info"><%- contract.price_unit  %></p>
                         </div>
                         <a href="#">Lees meer</a>
                     </div>
