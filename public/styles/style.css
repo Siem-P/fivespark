@@ -132,7 +132,6 @@ nav {
 
 .nav-tabs {
     display: flex;
-    /* width: 100%; */
     align-items: center;
     justify-content: center;
     margin: 1em;
@@ -151,6 +150,8 @@ nav {
 .nav-tabs .tab-button {
     background: unset;
     border: unset;
+    height: 100%;
+    width: 100%;
 }
 
 .nav-tabs .nav-item:nth-of-type(1) {
@@ -166,7 +167,8 @@ nav {
 }
 
 .nav-tabs .nav-item:nth-of-type(2) {
-    border: #000 3px solid;
+    border-top: #000 3px solid;
+    border-bottom: #000 3px solid;
 }
 
 .nav-tabs .nav-item:nth-of-type(2).active {
