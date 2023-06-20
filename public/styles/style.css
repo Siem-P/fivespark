@@ -5,6 +5,8 @@
     --black-75: #404040;
     --black-50: #808080;
     --black-25: #BFBFBF;
+
+    --default-padding: 1em;
 }
 
 * {
@@ -13,9 +15,180 @@
     box-sizing: border-box;
 }
 
+@import url('https://fonts.cdnfonts.com/css/t-star-pro');
+
 @font-face {
     font-family: 'TStarProRegular';
     src: url("../fonts/TStarProRegular.ttf");
     font-weight: 500;
     font-display: swap;
+}
+
+body {
+    font-family: 'TStarProRegular';
+}
+
+/* NAVIGATION */
+
+nav {
+    position: relative;
+    width: 100%;
+    display: flex;
+    background-color: var(--primary-color-black);
+}
+
+.nav-wrapper {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    padding: var(--default-padding);
+    justify-content: space-between;
+}
+
+.nav-wrapper .logo-img {
+    width: 5em;
+    margin-bottom: 0.2em;
+}
+
+
+/* Content Wrapper */
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+/* header */
+
+.intro-section {
+    background: var(--primary-color-white);
+    padding: var(--default-padding);
+    color: var(--primary-color-black);
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.intro-section h1 {
+    letter-spacing: 1px;
+}
+
+.intro-section a {
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    position: relative;
+    font-weight: 600;
+    width: 10em;
+    height: 2.5em;
+    color: var(--primary-color-black);
+    background-color: var(--primary-color);
+    transition: 0.2s ease;
+}
+
+
+.intro-section a:hover {
+    -webkit-box-shadow: 0px 4px 0px 0px #000000; 
+    box-shadow: 0px 4px 0px 0px #000000;
+    transform: translateY(-.1em);
+}
+
+/* Section below header */
+ 
+.list-of-pros {
+    display: flex;
+    flex-direction: column;
+    padding: var(--default-padding);
+    gap: 1em;
+    color: var(--primary-color-white);
+    background-color: var(--black-75);
+}
+
+.list-of-pros ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.list-of-pros ul li {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+}
+
+
+
+/* Section for service contracts */
+
+/* Switch contract buttons */
+
+.service-contracts {
+    display: flex;
+    flex-direction: column;
+    padding: var(--default-padding);
+}
+
+.nav-tabs {
+    display: flex;
+    /* width: 100%; */
+    align-items: center;
+    justify-content: center;
+    margin: 1em;
+    height: 5em;
+}
+
+.nav-tabs .nav-item {
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    text-align: center;
+    width: 100%;   
+    height: 100%;
+}
+
+.nav-tabs .tab-button {
+    background: unset;
+    border: unset;
+}
+
+.nav-tabs .nav-item:nth-of-type(1) {
+    border: #000 3px solid;
+    border-top-left-radius: 1em;
+    border-bottom-left-radius: 1em;
+}
+
+.nav-tabs .nav-item:nth-of-type(1).active {
+    border: var(--primary-color) 3px solid;
+    border-top-left-radius: 1em;
+    border-bottom-left-radius: 1em;
+}
+
+.nav-tabs .nav-item:nth-of-type(2) {
+    border: #000 3px solid;
+}
+
+.nav-tabs .nav-item:nth-of-type(2).active {
+    border: var(--primary-color) 3px solid;
+}
+
+.nav-tabs .nav-item:nth-of-type(3) {
+    border: #000 3px solid;
+    border-top-right-radius: 1em;
+    border-bottom-right-radius: 1em;
+}
+
+.nav-tabs .nav-item:nth-of-type(3).active {
+    border: var(--primary-color) 3px solid;
+    border-top-right-radius: 1em;
+    border-bottom-right-radius: 1em;
+}
+
+
+
+
+
+.desktop-contract-wrapper {
+    display: none;
 }
