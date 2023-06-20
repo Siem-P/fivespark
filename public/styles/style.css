@@ -154,6 +154,8 @@ nav {
     width: 100%;
 }
 
+/* Need to refactor this \/ */
+
 .nav-tabs .nav-item:nth-of-type(1) {
     border: #000 3px solid;
     border-top-left-radius: 1em;
@@ -188,9 +190,9 @@ nav {
 }
 
 
-
-
-
 .desktop-contract-wrapper {
     display: none;
 }
+
+
+.table-responsive
