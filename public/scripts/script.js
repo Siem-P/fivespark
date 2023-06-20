@@ -1,0 +1,13 @@
+const navItem = document.querySelectorAll('.nav-item');
+const tabButton = document.querySelectorAll('.tab-button');
+
+for (let id = 0; id < tabButton.length; id++) {
+    const element = tabButton[id];
+    
+    tabButton[id].addEventListener('click', () =>{
+        navItem.forEach(element => {
+            element.classList.remove('active');
+        });
+        navItem[id].classList.toggle('active');
+    })
+}
