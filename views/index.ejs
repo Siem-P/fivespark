@@ -20,22 +20,25 @@
     <section class="list-of-pros">
         <h2>Voordelen</h2>
         <ul>
-            <li class="list-item"><img src="../images/check_black.svg" alt=""><p>Pro-actief werkplekbeheer & monitoring</p></li>
-            <li class="list-item"><img src="../images/check_black.svg" alt=""><p>Solide backups</p></li>
-            <li class="list-item"><img src="../images/check_black.svg" alt=""><p>Hardware [ as a service ]</p></li>
-            <li class="list-item"><img src="../images/check_black.svg" alt=""><p>Microsoft-licenties</p></li>
-            <li class="list-item"><img src="../images/check_black.svg" alt=""><p>Security - anti-virus & anti-ransomware</p></li>
+            <li class="list-item"><img src="../icons/check.svg" alt=""><p>Pro-actief werkplekbeheer & monitoring</p></li>
+            <li class="list-item"><img src="../icons/check.svg" alt=""><p>Solide backups</p></li>
+            <li class="list-item"><img src="../icons/check.svg" alt=""><p>Hardware [ as a service ]</p></li>
+            <li class="list-item"><img src="../icons/check.svg" alt=""><p>Microsoft-licenties</p></li>
+            <li class="list-item"><img src="../icons/check.svg" alt=""><p>Security - anti-virus & anti-ransomware</p></li>
         </ul>
     </section>
 
-    <section class="service-contracts">
+    <section id="service-contracts" class="service-contracts">
         <ul class="nav-tabs">
 			<% for( let i = 0; i < selectedContracts.length; i++ ) { %>
-                <li class="nav-item"> 
-                    <button class="tab-button"><%- selectedContractTranslations[i].title %></button>
+                <li class="nav-item">
+					<div class="button-wrapper">
+						<button class="tab-button"><%- selectedContractTranslations[i].title %></button>
+						<p class="contract-price">€<%- selectedContracts[i].list_price %></p>
+					</div>
                     <div class="desktop-contract-wrapper">
                         <div class="contract-info-wrapper">
-                            <p class="contract-price"><%- selectedContracts[i].list_price %></p>
+                            
                             <p class="price-info"><%- selectedContracts[i].price_unit  %></p>
                         </div>
                         <a href="#">Lees meer</a>
@@ -60,7 +63,7 @@
 							<% if (activity.activities_id === activityTranslation.activities_id && activityTranslation.languages_code === language) { %>
 								<tr>
 									<td><%- activityTranslation.title %></td>
-									<td>Tooltip</td>
+									<td><img src="../icons/tooltip.svg"></td>
 									
 									<% if (activity.charged_minutes === 0) { %>
 										<td><img src="../icons/Check_icon.svg" alt="rondje met vinkje er in."></td>
@@ -71,9 +74,6 @@
 							<% } %>
 						<% }) %>
 					<% }) %>
-					
-					
-					
 				</tbody>
 			</table>
 		</div>
@@ -94,7 +94,7 @@
 							<% if (activity.activities_id === activityTranslation.id) { %>
 								<tr class="">
 									<td><%- activityTranslation.title %></td>
-									<td>Tooltip</td>
+									<td><img src="../icons/tooltip.svg"></td>
 									<% if (activity.charged_minutes === 0) { %>
 										<td><img src="../icons/Check_icon.svg" alt="rondje met vinkje er in."></td>
 									<% } else { %>
@@ -124,7 +124,7 @@
 							<% if (activity.activities_id === activityTranslation.id) { %>
 								<tr class="">
 									<td><%- activityTranslation.title %></td>
-									<td>Tooltip</td>
+									<td><img src="../icons/tooltip.svg"></td>
 									<% if (activity.charged_minutes === 0) { %>
 										<td><img src="../icons/Check_icon.svg" alt="rondje met vinkje er in."></td>
 									<% } else { %>
