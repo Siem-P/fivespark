@@ -14,11 +14,13 @@
 		<div class="header-sections-wrapper">
 			<section class="intro-section">
 				<h1>Digitale Werkplek</h1>
-				<blockquote><p>Een werkplek waar
-					je op kunt bouwen</p></blockquote>
+				<blockquote>
+					<p>Een werkplek waar
+						je op kunt bouwen</p>
+				</blockquote>
 				<a href="#service-contracts">Bekijk contracten</a>
 			</section>
-	
+
 			<section class="list-of-pros">
 				<h2>Voordelen</h2>
 				<ul>
@@ -47,28 +49,28 @@
 					<h2>Kies jouw pakket</h2>
 					<p>Maak keuze uit één van onze paketten.</p>
 				</div>
-				
+
 				<a class="choose-contract-btn" href="#service-contracts">Kies pakket</a>
 			</section>
 			<section class="static-contracts">
 				<% for( let i = 0; i < selectedContracts.length; i++ ) { %>
-					<article>
-						<div>
-							<p class="contract-name"><%- selectedContractTranslations[i].title %></p>
-							<div class="price-wrapper">
-								<p class="contract-price">€<%- selectedContracts[i].list_price %></p>
-								<p class="price-info">per gebruiker p/mnd</p>
-							</div>
+				<article>
+					<div>
+						<p class="contract-name"><%- selectedContractTranslations[i].title %></p>
+						<div class="price-wrapper">
+							<p class="contract-price">€<%- selectedContracts[i].list_price %></p>
+							<p class="price-info">per gebruiker p/mnd</p>
 						</div>
-						<button >Lees meer</button>
-					</article>
+					</div>
+					<button>Lees meer</button>
+				</article>
 				<% } %>
-				
+
 			</section>
 		</section>
-		
+
 	</header>
-	
+
 	<div class="divider-graphic"></div>
 
 	<section id="service-contracts" class="service-contracts">
