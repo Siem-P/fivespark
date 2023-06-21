@@ -1,144 +1,146 @@
 <%- include("./partials/head.ejs") %>
 
 <nav>
-    <div class="nav-wrapper">
+	<div class="nav-wrapper">
 		<img src="https://fivespark.com/hubfs/Fivespark_Oct_2022/Images/white_logo.svg" class="logo-img" alt="">
-        <!-- <img src="https://fivespark.com/hubfs/Fivespark_Oct_2022/Images/Logo.svg" class="logo-img" alt=""> -->
-        <button class="menu-icon">Menu</button>
-    </div>
+		<!-- <img src="https://fivespark.com/hubfs/Fivespark_Oct_2022/Images/Logo.svg" class="logo-img" alt=""> -->
+		<button class="menu-icon">Menu</button>
+	</div>
 </nav>
 
 <div class="content-wrapper">
-    <section class="intro-section">
-        <h1>Digitale Werkplek</h1>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum molestiae eveniet culpa rem adipisci aperiam rerum. Corporis itaque nesciunt minima nemo accusamus ipsam veniam, fugiat doloribus deleniti, natus totam ducimus.</p>
-		<a href="#service-contracts">Bekijk contracten</a>
-    </section>
 
-   
+	<header>
+		<div class="header-sections-wrapper">
+			<section class="intro-section">
+				<h1>Digitale Werkplek</h1>
+				<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum molestiae eveniet culpa rem adipisci aperiam
+					rerum. Corporis itaque nesciunt minima nemo accusamus ipsam veniam, fugiat doloribus deleniti, natus totam
+					ducimus.</p>
+				<a href="#service-contracts">Bekijk contracten</a>
+			</section>
+	
+			<section class="list-of-pros">
+				<h2>Voordelen</h2>
+				<ul>
+					<li class="list-item"><img src="../icons/check.svg" alt="">
+						<p>Pro-actief werkplekbeheer & monitoring</p>
+					</li>
+					<li class="list-item"><img src="../icons/check.svg" alt="">
+						<p>Solide backups</p>
+					</li>
+					<li class="list-item"><img src="../icons/check.svg" alt="">
+						<p>Hardware [ as a service ]</p>
+					</li>
+					<li class="list-item"><img src="../icons/check.svg" alt="">
+						<p>Microsoft-licenties</p>
+					</li>
+					<li class="list-item"><img src="../icons/check.svg" alt="">
+						<p>Security - anti-virus & anti-ransomware</p>
+					</li>
+				</ul>
+			</section>
+		</div>
 
-    <section class="list-of-pros">
-        <h2>Voordelen</h2>
-        <ul>
-            <li class="list-item"><img src="../icons/check.svg" alt=""><p>Pro-actief werkplekbeheer & monitoring</p></li>
-            <li class="list-item"><img src="../icons/check.svg" alt=""><p>Solide backups</p></li>
-            <li class="list-item"><img src="../icons/check.svg" alt=""><p>Hardware [ as a service ]</p></li>
-            <li class="list-item"><img src="../icons/check.svg" alt=""><p>Microsoft-licenties</p></li>
-            <li class="list-item"><img src="../icons/check.svg" alt=""><p>Security - anti-virus & anti-ransomware</p></li>
-        </ul>
-    </section>
+		<section class="contract-representation">
+			<div class=""></div>
+			<h2>Kies jouw pakket</h2>
+			
+		</section>
+		
+	</header>
+	
 	<div class="divider-graphic"></div>
 
-    <section id="service-contracts" class="service-contracts">
-        <ul class="nav-tabs">
+	<section id="service-contracts" class="service-contracts">
+		<ul class="nav-tabs">
 			<% for( let i = 0; i < selectedContracts.length; i++ ) { %>
-                <li class="nav-item">
-					<div class="button-wrapper">
-						<button class="tab-button"><%- selectedContractTranslations[i].title %></button>
-						<p class="contract-price">€<%- selectedContracts[i].list_price %></p>
+			<li class="nav-item">
+				<div class="button-wrapper">
+					<button class="tab-button"><%- selectedContractTranslations[i].title %></button>
+					<p class="contract-price">€<%- selectedContracts[i].list_price %></p>
+				</div>
+				<div class="desktop-contract-wrapper">
+					<div class="contract-info-wrapper">
+						<p class="price-info"><%- selectedContracts[i].price_unit  %></p>
 					</div>
-                    <div class="desktop-contract-wrapper">
-                        <div class="contract-info-wrapper">
-                            
-                            <p class="price-info"><%- selectedContracts[i].price_unit  %></p>
-                        </div>
-                        <a href="#">Lees meer</a>
-                    </div>
-                </li>
+					<a href="#">Lees meer</a>
+				</div>
+			</li>
 			<% } %>
-        </ul>
-
-		<!-- Basic -->
-		<div class="table-responsive">
-			<table class="contract-table">
-				<thead>
-					<tr>
-						<th scope="col">Activiteit</th>
-						<th scope="col">---</th>
-						<th scope="col">---</th>
-					</tr>
-				</thead>
-				<tbody>
-					<% contract_basic.forEach(activity => { %>
+		</ul>
+		<div class="table-wrapper">
+			<!-- Basic -->
+			<div class="table-responsive">
+				<table class="contract-table">
+					<tbody>
+						<% contract_basic.forEach(activity => { %>
 						<% activityTranslations.data.forEach(activityTranslation => { %>
-							<% if (activity.activities_id === activityTranslation.activities_id && activityTranslation.languages_code === language) { %>
-								<tr>
-									<td><%- activityTranslation.title %></td>
-									<td><img src="../icons/tooltip.svg"></td>
-									
-									<% if (activity.charged_minutes === 0) { %>
-										<td><img src="../icons/Check_icon.svg" alt="rondje met vinkje er in."></td>
-									<% } else { %>
-										<td><img src="../icons/X_icon.svg" alt="rondje met kruisje er in."></td>
-									<% } %>
-								</tr>
+						<% if (activity.activities_id === activityTranslation.activities_id && activityTranslation.languages_code === language) { %>
+						<tr>
+							<td><%- activityTranslation.title %></td>
+							<!-- <td><img src="../icons/tooltip.svg"></td> -->
+							<% if (activity.charged_minutes === 0) { %>
+							<td><img src="../icons/Check_icon.svg" alt="rondje met vinkje er in."></td>
+							<% } else { %>
+							<td><img src="../icons/X_icon.svg" alt="rondje met kruisje er in."></td>
 							<% } %>
+						</tr>
+						<% } %>
 						<% }) %>
-					<% }) %>
-				</tbody>
-			</table>
+						<% }) %>
+					</tbody>
+				</table>
+			</div>
+
+			<!-- Premium -->
+			<div class="table-responsive">
+				<table class="contract-table hide">
+					<tbody>
+						<% contract_complete.forEach(activity => { %>
+						<% activityTranslations.data.forEach(activityTranslation => { %>
+						<% if (activity.activities_id === activityTranslation.activities_id) { %>
+						<tr>
+							<td><%- activityTranslation.title %></td>
+							<!-- <td><img src="../icons/tooltip.svg"></td> -->
+							<% if (activity.charged_minutes === 0) { %>
+							<td><img src="../icons/Check_icon.svg" alt="rondje met vinkje er in."></td>
+							<% } else { %>
+							<td><img src="../icons/X_icon.svg" alt="rondje met kruisje er in."></td>
+							<% } %>
+						</tr>
+						<% } %>
+						<% }) %>
+						<% }) %>
+					</tbody>
+				</table>
+			</div>
+
+			<!-- Complete -->
+			<div class="table-responsive">
+				<table class="contract-table hide">
+					<tbody>
+						<% contract_premium.forEach(activity => { %>
+						<% activityTranslations.data.forEach(activityTranslation => { %>
+						<% if (activity.activities_id === activityTranslation.activities_id) { %>
+						<tr>
+							<td><%- activityTranslation.title %></td>
+							<!-- <td><img src="../icons/tooltip.svg"></td> -->
+							<% if (activity.charged_minutes === 0) { %>
+							<td><img src="../icons/Check_icon.svg" alt="rondje met vinkje er in."></td>
+							<% } else { %>
+							<td><img src="../icons/X_icon.svg" alt="rondje met kruisje er in."></td>
+							<% } %>
+						</tr>
+						<% } %>
+						<% }) %>
+						<% }) %>
+					</tbody>
+				</table>
+			</div>
 		</div>
 
-		<!-- Premium -->
-		<div class="table-responsive">
-			<table class="contract-table hide">
-				<thead>
-					<tr>
-						<th scope="col">Activiteit</th>
-						<th scope="col">---</th>
-						<th scope="col">---</th>
-					</tr>
-				</thead>
-				<tbody>
-					<% contract_complete.forEach(activity => { %>
-						<% activityTranslations.data.forEach(activityTranslation => { %>
-							<% if (activity.activities_id === activityTranslation.id) { %>
-								<tr class="">
-									<td><%- activityTranslation.title %></td>
-									<td><img src="../icons/tooltip.svg"></td>
-									<% if (activity.charged_minutes === 0) { %>
-										<td><img src="../icons/Check_icon.svg" alt="rondje met vinkje er in."></td>
-									<% } else { %>
-										<td><img src="../icons/X_icon.svg" alt="rondje met kruisje er in."></td>
-									<% } %>
-								</tr>
-							<% } %>
-						<% }) %>
-					<% }) %>
-				</tbody>
-			</table>
-		</div>
-
-		<!-- Complete -->
-		<div class="table-responsive">
-			<table class="contract-table hide">
-				<thead>
-					<tr>
-						<th scope="col">Activiteit</th>
-						<th scope="col">---</th>
-						<th scope="col">---</th>
-					</tr>
-				</thead>
-				<tbody>
-					<% contract_premium.forEach(activity => { %>
-						<% activityTranslations.data.forEach(activityTranslation => { %>
-							<% if (activity.activities_id === activityTranslation.id) { %>
-								<tr class="">
-									<td><%- activityTranslation.title %></td>
-									<td><img src="../icons/tooltip.svg"></td>
-									<% if (activity.charged_minutes === 0) { %>
-										<td><img src="../icons/Check_icon.svg" alt="rondje met vinkje er in."></td>
-									<% } else { %>
-										<td><img src="../icons/X_icon.svg" alt="rondje met kruisje er in."></td>
-									<% } %>
-								</tr>
-							<% } %>
-						<% }) %>
-					<% }) %>
-				</tbody>
-			</table>
-		</div>
-    </section>
+	</section>
 </div>
 
 

@@ -15,6 +15,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 @import url('https://fonts.cdnfonts.com/css/t-star-pro');
 
 @font-face {
@@ -56,6 +60,7 @@ nav {
 .content-wrapper {
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 /* header */
@@ -100,10 +105,10 @@ nav {
 .list-of-pros {
     display: flex;
     flex-direction: column;
-    padding: var(--default-padding);
+    padding: 2em 1.5em;
     gap: 1em;
     color: var(--primary-color-white);
-    background-color: var(--primary-color-black);
+    background-color: var(--black-75);
 }
 
 .list-of-pros ul {
@@ -118,6 +123,9 @@ nav {
     gap: 0.5em;
 }
 
+.contract-representation {
+    display: none;
+}
 
 
 /* Section for service contracts */
@@ -127,15 +135,24 @@ nav {
 .service-contracts {
     display: flex;
     flex-direction: column;
-    padding: var(--default-padding);
+    padding: 0.5em;
+    position: relative;
 }
-
 .nav-tabs {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 1em;
-    height: 5em;
+    padding: var(--default-padding);
+    height: auto;
+    /* Maybe a sticky position */
+    /* position: sticky;
+    top: 1em;
+    left: 0; */
+}
+
+.nav-tabs.is-pinned {
+    background-color: var(--black-75);
+    color: var(--primary-color-white);
 }
 
 .nav-tabs .nav-item {
@@ -143,6 +160,7 @@ nav {
     list-style-type: none;
     justify-content: center;
     text-align: center;
+    padding: 0.5em;
     width: 100%;   
     height: 100%;
     transition: .2s ease;
@@ -154,15 +172,19 @@ nav {
     justify-content: center;
     align-items: center;
     gap: 0.5em;
+    
 }
 
 .nav-tabs .tab-button {
     background: unset;
     border: unset;
     width: 100%;
-    font-weight: 600;
+    font-weight: 500;
 }
 
+.nav-item .contract-price {
+    font-weight: 600;
+}
 
 
 /* Need to refactor this \/ */
@@ -211,6 +233,129 @@ nav {
     display: none;
 }
 
+
+
+/* Table section */
+table {
+    border-collapse: collapse;
+  }
+
+.table-responsive {
+    display: flex;
+    font-size: 1em;
+}
+
+.contract-table th {
+    font-weight: 600;
+    font-size: large;
+}
+
+.contract-table tbody tr {
+   margin-top: 1em;
+}
+
+.contract-table tbody td {
+    /* font-size: 0.9em; */
+    padding: 0.5em;   
+}
+.contract-table tbody tr {
+    border-top: 2px solid hsl(240, 8%, 85%, 0.583);
+}
+
+
 .hide {
     display: none;
+}
+
+
+@media (min-width: 20em) {
+    .nav-tabs .tab-button {
+        background: unset;
+        border: unset;
+        width: 100%;
+        font-weight: 500;
+        font-size: 0.8em;
+        max-width: 10em;
+    }
+}
+
+
+@media (min-width: 48em) {
+    /* Get rid of hide classes from mobile view */
+    .hide {
+        display: inline;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+        height: calc(100vh - 5em);
+    }
+
+    .header-sections-wrapper {
+        display: flex;
+        flex-direction: row;
+    }
+    header .intro-section {
+        width: 60%;
+    }
+
+    header .contract-representation {
+        display: flex;
+        background-color: var(--primary-color);
+        width: 100%;
+        height: 100%;
+    }
+
+    .nav-tabs .tab-button {
+        background: unset;
+        border: unset;
+        width: 100%;
+        height: auto;
+        font-weight: 600;
+        font-size: 1em;
+    }
+
+    .button-wrapper .contract-price {
+        font-size: 1.5em;
+    }
+
+    .nav-item {
+        display: flex;
+        flex-direction: column;
+        padding: var(--default-padding);
+        gap: 1em;
+    }
+
+    .nav-item .desktop-contract-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .desktop-contract-wrapper .price-info {
+        font-size: 0.85em;
+        width: 6em;
+        margin: 0 auto;
+    }
+
+    .table-wrapper {
+        width: 100%;
+        /* max-width: 20em; */
+        padding: 1.5em 1em;
+        display: flex;
+        gap: 0.5em;
+    }
+
+
+    .list-of-pros {
+
+    }
+
+    
+    
+
+    .intro-section a {
+        display: none;
+    }
 }
