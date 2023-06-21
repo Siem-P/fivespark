@@ -53,12 +53,14 @@
 			<section class="static-contracts">
 				<% for( let i = 0; i < selectedContracts.length; i++ ) { %>
 					<article>
-						<p class="contract-name"><%- selectedContractTranslations[i].title %></p>
-						<div class="price-wrapper">
-							<p class="contract-price">€<%- selectedContracts[i].list_price %></p>
-							<p class="price-info">per gebruiker p/mnd</p>
+						<div>
+							<p class="contract-name"><%- selectedContractTranslations[i].title %></p>
+							<div class="price-wrapper">
+								<p class="contract-price">€<%- selectedContracts[i].list_price %></p>
+								<p class="price-info">per gebruiker p/mnd</p>
+							</div>
 						</div>
-						
+						<button >Lees meer</button>
 					</article>
 				<% } %>
 				
