@@ -103,7 +103,7 @@ nav {
     padding: var(--default-padding);
     gap: 1em;
     color: var(--primary-color-white);
-    background-color: var(--black-75);
+    background-color: var(--primary-color-black);
 }
 
 .list-of-pros ul {
@@ -145,14 +145,25 @@ nav {
     text-align: center;
     width: 100%;   
     height: 100%;
+    transition: .2s ease;
+}
+
+.nav-tabs .button-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
 }
 
 .nav-tabs .tab-button {
     background: unset;
     border: unset;
-    height: 100%;
     width: 100%;
+    font-weight: 600;
 }
+
+
 
 /* Need to refactor this \/ */
 
@@ -166,6 +177,8 @@ nav {
     border: var(--primary-color) 3px solid;
     border-top-left-radius: 1em;
     border-bottom-left-radius: 1em;
+    background-color: var(--primary-color);
+    color: var(--primary-color-white);
 }
 
 .nav-tabs .nav-item:nth-of-type(2) {
@@ -175,6 +188,8 @@ nav {
 
 .nav-tabs .nav-item:nth-of-type(2).active {
     border: var(--primary-color) 3px solid;
+    background-color: var(--primary-color);
+    color: var(--primary-color-white);
 }
 
 .nav-tabs .nav-item:nth-of-type(3) {
@@ -187,6 +202,8 @@ nav {
     border: var(--primary-color) 3px solid;
     border-top-right-radius: 1em;
     border-bottom-right-radius: 1em;
+    background-color: var(--primary-color);
+    color: var(--primary-color-white);
 }
 
 
