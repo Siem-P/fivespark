@@ -4,7 +4,7 @@
 	<div class="nav-wrapper">
 		<img src="https://fivespark.com/hubfs/Fivespark_Oct_2022/Images/white_logo.svg" class="logo-img" alt="">
 		<!-- <img src="https://fivespark.com/hubfs/Fivespark_Oct_2022/Images/Logo.svg" class="logo-img" alt=""> -->
-		<button class="menu-icon">Menu</button>
+		<!-- <button class="menu-icon">Menu</button> -->
 	</div>
 </nav>
 
@@ -14,9 +14,8 @@
 		<div class="header-sections-wrapper">
 			<section class="intro-section">
 				<h1>Digitale Werkplek</h1>
-				<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum molestiae eveniet culpa rem adipisci aperiam
-					rerum. Corporis itaque nesciunt minima nemo accusamus ipsam veniam, fugiat doloribus deleniti, natus totam
-					ducimus.</p>
+				<blockquote><p>Een werkplek waar
+					je op kunt bouwen</p></blockquote>
 				<a href="#service-contracts">Bekijk contracten</a>
 			</section>
 	
@@ -43,9 +42,27 @@
 		</div>
 
 		<section class="contract-representation">
-			<div class=""></div>
-			<h2>Kies jouw pakket</h2>
-			
+			<section class="representation-info">
+				<div>
+					<h2>Kies jouw pakket</h2>
+					<p>Maak keuze uit één van onze paketten.</p>
+				</div>
+				
+				<a class="choose-contract-btn" href="#service-contracts">Kies pakket</a>
+			</section>
+			<section class="static-contracts">
+				<% for( let i = 0; i < selectedContracts.length; i++ ) { %>
+					<article>
+						<p class="contract-name"><%- selectedContractTranslations[i].title %></p>
+						<div class="price-wrapper">
+							<p class="contract-price">€<%- selectedContracts[i].list_price %></p>
+							<p class="price-info">per gebruiker p/mnd</p>
+						</div>
+						
+					</article>
+				<% } %>
+				
+			</section>
 		</section>
 		
 	</header>
