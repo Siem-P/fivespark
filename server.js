@@ -33,6 +33,10 @@ const apiInformation = {
 
 const language = "nl-NL"
 
+
+
+server.get("/", async (req, res) => {
+	
 // GET Service Contracts
 const serviceContracts = await dataFetch("https://api.fivespark.com/items/service_contracts")
 // GET Activities in service contracts
@@ -41,10 +45,6 @@ const activitiesServicesContracts = await dataFetch("https://api.fivespark.com/i
 const contractTranslations = await dataFetch("https://api.fivespark.com/items/service_contracts_translations")
 // GET Translations & Info about activities
 const activityTranslations = await dataFetch("https://api.fivespark.com/items/activities_translations")
-
-server.get("/", async (req, res) => {
-	
-
 	
 	const selectedContracts = serviceContracts.data.filter(contract => contract.id === 3 || contract.id === 4 || contract.id === 7)
 	const selectedContractTranslations = contractTranslations.data.filter(translation => translation.id === 3 || translation.id === 4 || translation.id === 7)
@@ -55,9 +55,9 @@ server.get("/", async (req, res) => {
 
 	
 	
-	console.log()
+	console.log(selectedContractTranslations)
 	
-	res.render("index", { selectedContracts, contract_basic, contract_premium, contract_complete, activityTranslations, language } )
+	res.render("index", { selectedContracts, selectedContractTranslations, contract_basic, contract_premium, contract_complete, activityTranslations, language } )
 	
 })
 

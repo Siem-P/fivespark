@@ -30,24 +30,23 @@
 
     <section class="service-contracts">
         <ul class="nav-tabs">
-            <% selectedContracts.forEach(contract => { %>
-                
+			<% for( let i = 0; i < selectedContracts.length; i++ ) { %>
                 <li class="nav-item"> 
-                    <button class="tab-button">Basic</button>
+                    <button class="tab-button"><%- selectedContractTranslations[i].title %></button>
                     <div class="desktop-contract-wrapper">
                         <div class="contract-info-wrapper">
-                            <p class="contract-price"><%- contract.list_price %></p>
-                            <p class="price-info"><%- contract.price_unit  %></p>
+                            <p class="contract-price"><%- selectedContracts[i].list_price %></p>
+                            <p class="price-info"><%- selectedContracts[i].price_unit  %></p>
                         </div>
                         <a href="#">Lees meer</a>
                     </div>
                 </li>
-            <% }) %>
+			<% } %>
         </ul>
 
 		<!-- Basic -->
 		<div class="table-responsive">
-			<table class="table table-primary">
+			<table class="contract-table">
 				<thead>
 					<tr>
 						<th scope="col">Activiteit</th>
@@ -81,7 +80,7 @@
 
 		<!-- Premium -->
 		<div class="table-responsive">
-			<table class="table table-primary">
+			<table class="contract-table hide">
 				<thead>
 					<tr>
 						<th scope="col">Activiteit</th>
@@ -111,7 +110,7 @@
 
 		<!-- Complete -->
 		<div class="table-responsive">
-			<table class="table table-primary">
+			<table class="contract-table hide">
 				<thead>
 					<tr>
 						<th scope="col">Activiteit</th>

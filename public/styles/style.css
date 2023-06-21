@@ -194,5 +194,6 @@ nav {
     display: none;
 }
 
-
-.table-responsive
+.hide {
+    display: none;
+}
