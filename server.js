@@ -55,7 +55,7 @@ const activityTranslations = await dataFetch("https://api.fivespark.com/items/ac
 
 	
 	
-	console.log(selectedContractTranslations)
+	console.log(activityTranslations)
 	
 	res.render("index", { selectedContracts, selectedContractTranslations, contract_basic, contract_premium, contract_complete, activityTranslations, language } )
 	
