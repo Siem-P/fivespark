@@ -382,6 +382,11 @@ table {
     gap: 1em;
   }
 
+  .static-contracts article div .description {
+    padding: 1em 0.5em;
+    border-top: 2px solid hsl(240, 8%, 85%, 0.583);
+  }
+
   .static-contracts article button {
     display: flex;
     margin: 0 auto;
@@ -415,6 +420,7 @@ table {
     flex-direction: row;
     width: 100%;
     justify-content: space-around;
+    margin-bottom: 1em;
   }
 
   .price-wrapper .price-info {
@@ -440,11 +446,17 @@ table {
     font-size: 1.5em;
   }
 
+  .nav-tabs {
+    width: 100%;
+  }
+
   .nav-item {
     display: flex;
     flex-direction: column;
     padding: var(--default-padding);
     gap: 1em;
+    
+    border: none;
   }
 
   .nav-item .desktop-contract-wrapper {

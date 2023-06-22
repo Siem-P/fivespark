@@ -54,7 +54,7 @@ server.get("/", async (req, res) => {
 	const contract_complete = activitiesServicesContracts.data.filter(contract => contract.service_contracts_id === 4)
 	const contract_premium = activitiesServicesContracts.data.filter(contract => contract.service_contracts_id === 7)
 
-	console.log(activityTranslations)
+	console.log(selectedContractTranslations)
 
 	res.render("index", {
 		selectedContracts,
