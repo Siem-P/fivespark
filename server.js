@@ -43,7 +43,7 @@ server.get("/", async (req, res) => {
 	const serviceContracts = await dataFetch("https://api.fivespark.com/items/service_contracts")
 	// GET Activities in service contracts
 	const activitiesServicesContracts = await dataFetch("https://api.fivespark.com/items/activities_service_contracts")
-	// GET Translations for service contract]
+	// GET Translations for service contract
 	const contractTranslations = await dataFetch("https://api.fivespark.com/items/service_contracts_translations")
 	// GET Translations & Info about activities
 	const activityTranslations = await dataFetch("https://api.fivespark.com/items/activities_translations")
